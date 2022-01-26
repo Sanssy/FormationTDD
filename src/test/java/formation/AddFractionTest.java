@@ -14,5 +14,23 @@ public class AddFractionTest {
 
         assertEquals(zero, sumOfZero);
     }
+    @Test
+    void should_return_one_when_zero_plus_one() {
+        Fraction zero = new Fraction(0);
+        Fraction one = new Fraction(1);
+
+        Fraction result = zero.add(one);
+
+        assertEquals(one, result);
+    }
+    @Test
+    void should_return_one_when_one_plus_zero() {
+        Fraction zero = new Fraction(0);
+        Fraction one = new Fraction(1);
+
+        Fraction result = one.add(zero);
+
+        assertEquals(one, result);
+    }
 
 }
