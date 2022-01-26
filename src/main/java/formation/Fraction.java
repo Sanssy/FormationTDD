@@ -1,21 +1,33 @@
 package formation;
 
 public class Fraction {
-    private int number;
+
+    private int numerator;
+    private int denominator;
     public Fraction(int i) {
-        number = i;
+        numerator = i;
+        this.denominator = 1;
+    }
+
+    public Fraction(int numerator, int denominator) {
+        this.numerator = numerator;
+        this.denominator = denominator;
     }
 
     public Fraction add(Fraction fraction) {
-        if (fraction.number == 0) {
+        if (fraction.numerator == 0) {
             return this;
-        } else if (number == 0) {
+        } else if (numerator == 0) {
             return fraction;
         }
-        return new Fraction(this.number + fraction.number);
+        return new Fraction(this.numerator + fraction.numerator);
     }
 
-    public int getNumber() {
-        return number;
+    public int getNumerator() {
+        return numerator;
+    }
+
+    public int getDenominator() {
+        return denominator;
     }
 }
