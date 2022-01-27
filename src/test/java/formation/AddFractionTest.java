@@ -68,12 +68,23 @@ public class AddFractionTest {
         assertEquals(expectedResult.getDenominator(), result.getDenominator());
     }
     @Test
-    void should_return_2_by_2_when_1_by_two_plus_1_by_2() {
+    void should_return_2_by_2_when_1_by_2_plus_1_by_2() {
         Fraction oneByTwo = new Fraction(1, 2);
 
         Fraction result = oneByTwo.add(oneByTwo);
 
         Fraction expectedResult = new Fraction(2,2);
+        assertEquals(expectedResult.getNumerator(), result.getNumerator());
+        assertEquals(expectedResult.getDenominator(), result.getDenominator());
+    }
+
+    @Test
+    void should_return_2_by_3_when_1_by_3_plus_1_by_3() {
+        Fraction oneByThree = new Fraction(1, 3);
+
+        Fraction result = oneByThree.add(oneByThree);
+
+        Fraction expectedResult = new Fraction(2,3);
         assertEquals(expectedResult.getNumerator(), result.getNumerator());
         assertEquals(expectedResult.getDenominator(), result.getDenominator());
     }
