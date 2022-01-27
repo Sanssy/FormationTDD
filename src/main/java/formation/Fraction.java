@@ -31,6 +31,6 @@ public class Fraction {
     }
 
     public Fraction simplify() {
-        return new Fraction(5,3);
+        return new Fraction(1);
     }
 }

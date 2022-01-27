@@ -98,14 +98,13 @@ public class AddFractionTest {
     }
 
     @Test
-    void should_return_5_by_3_when_7_by_6_plus_2_by_4_after_simplification() {
+    void should_return_40_by_24_when_7_by_6_plus_2_by_4() {
         Fraction sevenBySix = new Fraction(7,6);
         Fraction twoByFour = new Fraction(2,4);
-        Fraction addResult = sevenBySix.add(twoByFour);
 
-        Fraction result = addResult.simplify();
+        Fraction result = sevenBySix.add(twoByFour);
 
-        Fraction expectedResult = new Fraction(5,3);
+        Fraction expectedResult = new Fraction(40,24);
         assertEquals(expectedResult, result);
     }
 
