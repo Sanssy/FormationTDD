@@ -34,6 +34,12 @@ public class Fraction {
         return new Fraction(this.numerator + fraction.numerator, this.denominator);
     }
 
+    public Fraction subtract(Fraction fraction) {
+            int numerator = this.numerator * fraction.denominator - fraction.numerator * this.denominator;
+            int denominator = this.denominator * fraction.denominator;
+            return new Fraction(numerator, denominator);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
