@@ -22,7 +22,7 @@ public class Fraction {
         return new Fraction(this.numerator * fraction.numerator,  fraction.denominator * this.denominator);
     }
     public Fraction divide(Fraction fraction) {
-        return this.multiply(new Fraction(this.denominator, this.numerator));
+        return this.multiply(new Fraction(fraction.denominator, fraction.numerator));
     }
 
     public Fraction add(Fraction fraction) {
