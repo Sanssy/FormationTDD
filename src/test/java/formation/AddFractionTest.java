@@ -89,4 +89,16 @@ public class AddFractionTest {
         assertEquals(expectedResult.getDenominator(), result.getDenominator());
     }
 
+    @Test
+    void should_return_3_by_2_when_1_plus_1_by_2() {
+        Fraction oneByTwo = new Fraction(1,2);
+        Fraction one = new Fraction(1);
+
+        Fraction result = one.add(oneByTwo);
+
+        Fraction expectedResult = new Fraction(3,2);
+        assertEquals(expectedResult.getNumerator(), result.getNumerator());
+        assertEquals(expectedResult.getDenominator(), result.getDenominator());
+    }
+
 }

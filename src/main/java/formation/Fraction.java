@@ -17,8 +17,12 @@ public class Fraction {
     public Fraction add(Fraction fraction) {
         if (fraction.numerator == 0) {
             return this;
-        } else if (numerator == 0) {
+        } else if (this.numerator == 0) {
             return fraction;
+        } else if (this.denominator != fraction.denominator) {
+            int numerator = this.numerator * fraction.denominator + fraction.numerator * this.denominator;
+            int denominator = this.denominator * fraction.denominator;
+            return new Fraction(numerator, denominator);
         }
         return new Fraction(this.numerator + fraction.numerator, this.denominator);
     }
