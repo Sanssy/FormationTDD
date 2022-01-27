@@ -28,6 +28,15 @@ public class SimplifyFractionTest {
         Fraction expectedResult = new Fraction(1,1);
         assertEquals(expectedResult, result);
     }
+    @Test
+    void should_return_0_by_1_after_simplification_of_0_by_2() {
+        Fraction zeroByTwo = new Fraction(0,2);
+
+        Fraction result = zeroByTwo.simplify();
+
+        Fraction expectedResult = new Fraction(0,1);
+        assertEquals(expectedResult, result);
+    }
 
     @Disabled
     @Test

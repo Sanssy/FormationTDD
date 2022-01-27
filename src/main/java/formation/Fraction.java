@@ -31,6 +31,9 @@ public class Fraction {
     }
 
     public Fraction simplify() {
+        if (this.numerator == 0) {
+            return new Fraction(0);
+        }
         return new Fraction(1);
     }
 }
