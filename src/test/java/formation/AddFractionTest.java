@@ -97,9 +97,4 @@ public class AddFractionTest {
         assertEquals(expectedResult, result);
     }
 
-    @Test
-    void should_not_assert() {
-        assertEquals(true,false);
-    }
-
 }
