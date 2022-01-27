@@ -97,4 +97,16 @@ public class AddFractionTest {
         assertEquals(expectedResult, result);
     }
 
+    @Test
+    void should_return_5_by_3_when_7_by_6_plus_2_by_4_after_simplification() {
+        Fraction sevenBySix = new Fraction(7,6);
+        Fraction twoByFour = new Fraction(2,4);
+        Fraction addResult = sevenBySix.add(twoByFour);
+
+        Fraction result = addResult.simplify();
+
+        Fraction expectedResult = new Fraction(5,3);
+        assertEquals(expectedResult, result);
+    }
+
 }
