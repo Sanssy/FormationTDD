@@ -18,6 +18,13 @@ public class Fraction {
 
     }
 
+    public Fraction multiply(Fraction fraction) {
+        return new Fraction(this.numerator * fraction.numerator,  fraction.denominator * this.denominator);
+    }
+    public Fraction divide(Fraction fraction) {
+        return this.multiply(new Fraction(this.denominator, this.numerator));
+    }
+
     public Fraction add(Fraction fraction) {
         if (this.denominator != fraction.denominator) {
             int numerator = this.numerator * fraction.denominator + fraction.numerator * this.denominator;
@@ -25,10 +32,6 @@ public class Fraction {
             return new Fraction(numerator, denominator);
         }
         return new Fraction(this.numerator + fraction.numerator, this.denominator);
-    }
-
-    public Fraction multiply(Fraction fraction) {
-        return new Fraction(this.numerator * fraction.numerator,  fraction.denominator * this.denominator);
     }
 
     @Override
