@@ -19,6 +19,16 @@ public class SimplifyFractionTest {
         assertEquals(expectedResult, result);
     }
 
+    @Test
+    void should_return_1_by_1_after_simplification_of_5_by_5() {
+        Fraction fiveByFive = new Fraction(5,5);
+
+        Fraction result = fiveByFive.simplify();
+
+        Fraction expectedResult = new Fraction(1,1);
+        assertEquals(expectedResult, result);
+    }
+
     @Disabled
     @Test
     void should_return_5_by_3_after_simplification() {
