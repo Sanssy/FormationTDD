@@ -1,5 +1,7 @@
 package formation;
 
+import java.math.BigInteger;
+
 public class Fraction {
 
     private final int numerator;
@@ -10,8 +12,10 @@ public class Fraction {
     }
 
     public Fraction(int numerator, int denominator) {
-        this.numerator = numerator;
-        this.denominator = denominator;
+        int gcd = getGcd(numerator, denominator);
+        this.numerator = numerator / gcd;
+        this.denominator = denominator / gcd;
+
     }
 
     public Fraction add(Fraction fraction) {
@@ -31,9 +35,15 @@ public class Fraction {
     }
 
     public Fraction simplify() {
-        if (this.numerator == 0) {
-            return new Fraction(0);
-        }
-        return new Fraction(1);
+        int gcd = getGcd(numerator, denominator);
+
+        return new Fraction(this.numerator / gcd, this.denominator / gcd);
+    }
+
+    private int getGcd(int numerator, int denominator) {
+        BigInteger bNumerator = new BigInteger(String.valueOf(numerator));
+        BigInteger bDenominator = new BigInteger(String.valueOf(denominator));
+        int gcd = bNumerator.gcd(bDenominator).intValue();
+        return gcd;
     }
 }
