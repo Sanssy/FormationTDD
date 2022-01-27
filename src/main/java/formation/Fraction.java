@@ -2,8 +2,8 @@ package formation;
 
 public class Fraction {
 
-    private int numerator;
-    private int denominator;
+    private final int numerator;
+    private final int denominator;
     public Fraction(int i) {
         numerator = i;
         this.denominator = 1;
@@ -15,11 +15,7 @@ public class Fraction {
     }
 
     public Fraction add(Fraction fraction) {
-        if (fraction.numerator == 0) {
-            return this;
-        } else if (this.numerator == 0) {
-            return fraction;
-        } else if (this.denominator != fraction.denominator) {
+        if (this.denominator != fraction.denominator) {
             int numerator = this.numerator * fraction.denominator + fraction.numerator * this.denominator;
             int denominator = this.denominator * fraction.denominator;
             return new Fraction(numerator, denominator);
@@ -27,11 +23,10 @@ public class Fraction {
         return new Fraction(this.numerator + fraction.numerator, this.denominator);
     }
 
-    public int getNumerator() {
-        return numerator;
-    }
-
-    public int getDenominator() {
-        return denominator;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Fraction fraction)) return false;
+        return numerator == fraction.numerator && denominator == fraction.denominator;
     }
 }
