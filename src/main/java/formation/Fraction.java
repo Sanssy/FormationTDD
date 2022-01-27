@@ -27,6 +27,10 @@ public class Fraction {
         return new Fraction(this.numerator + fraction.numerator, this.denominator);
     }
 
+    public Fraction multiply(Fraction fraction) {
+        return new Fraction(this.numerator * fraction.numerator,  fraction.denominator * this.denominator);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
