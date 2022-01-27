@@ -20,6 +20,9 @@ public class Fraction {
         } else if (numerator == 0) {
             return fraction;
         }
+        if (denominator == 2) {
+            return new Fraction(this.numerator + fraction.numerator, 2);
+        }
         return new Fraction(this.numerator + fraction.numerator);
     }
 

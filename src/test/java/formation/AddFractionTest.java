@@ -14,6 +14,7 @@ public class AddFractionTest {
 
         assertEquals(zero, sumOfZero);
     }
+
     @Test
     void should_return_1_when_0_plus_1() {
         Fraction zero = new Fraction(0);
@@ -23,6 +24,7 @@ public class AddFractionTest {
 
         assertEquals(one, result);
     }
+
     @Test
     void should_return_1_when_1_plus_0() {
         Fraction zero = new Fraction(0);
@@ -62,6 +64,16 @@ public class AddFractionTest {
         Fraction result = one.add(oneByOne);
 
         Fraction expectedResult = new Fraction(2,1);
+        assertEquals(expectedResult.getNumerator(), result.getNumerator());
+        assertEquals(expectedResult.getDenominator(), result.getDenominator());
+    }
+    @Test
+    void should_return_2_by_2_when_1_by_two_plus_1_by_2() {
+        Fraction oneByTwo = new Fraction(1, 2);
+
+        Fraction result = oneByTwo.add(oneByTwo);
+
+        Fraction expectedResult = new Fraction(2,2);
         assertEquals(expectedResult.getNumerator(), result.getNumerator());
         assertEquals(expectedResult.getDenominator(), result.getDenominator());
     }
