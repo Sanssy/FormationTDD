@@ -38,7 +38,16 @@ public class SimplifyFractionTest {
         assertEquals(expectedResult, result);
     }
 
-    @Disabled
+    @Test
+    void should_return_0_by_1_after_simplification_of_0_by_4() {
+        Fraction zeroByTwo = new Fraction(0,2);
+
+        Fraction result = zeroByTwo.simplify();
+
+        Fraction expectedResult = new Fraction(0,1);
+        assertEquals(expectedResult, result);
+    }
+
     @Test
     void should_return_5_by_3_after_simplification() {
         Fraction fortyByTwentyFour = new Fraction(40,24);
