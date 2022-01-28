@@ -11,7 +11,7 @@ public class Fraction {
         this.denominator = 1;
     }
 
-    public Fraction(int numerator, int denominator) {
+    public Fraction(Integer numerator, Integer denominator) {
         int gcd = getGcd(numerator, denominator);
         this.numerator = numerator / gcd;
         this.denominator = denominator / gcd;
@@ -22,22 +22,25 @@ public class Fraction {
         return new Fraction(this.numerator * fraction.numerator,  fraction.denominator * this.denominator);
     }
     public Fraction divide(Fraction fraction) {
-        return this.multiply(new Fraction(fraction.denominator, fraction.numerator));
+        return this.multiply(fraction.reverse());
+    }
+
+    public Fraction reverse() {
+        return new Fraction(this.denominator, this.numerator);
     }
 
     public Fraction add(Fraction fraction) {
-        if (this.denominator != fraction.denominator) {
             int numerator = this.numerator * fraction.denominator + fraction.numerator * this.denominator;
             int denominator = this.denominator * fraction.denominator;
             return new Fraction(numerator, denominator);
-        }
-        return new Fraction(this.numerator + fraction.numerator, this.denominator);
     }
 
     public Fraction subtract(Fraction fraction) {
-            int numerator = this.numerator * fraction.denominator - fraction.numerator * this.denominator;
-            int denominator = this.denominator * fraction.denominator;
-            return new Fraction(numerator, denominator);
+        return add(fraction.opposite());
+    }
+
+    public Fraction opposite() {
+        return new Fraction(-this.numerator, this.denominator);
     }
 
     @Override
